@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>يوتيوب</title>
+  <script>
+    setInterval(async () => {
+      const res = await fetch('https://yousefmsgiic.github.io/YouTube-/song.txt');
+      const song = await res.text();
+      if (song.trim() !== "") {
+        window.location.href = "https://www.youtube.com/results?search_query=" + encodeURIComponent(song);
+      }
+    }, 3000);
+  </script>
+</head>
+<body style="background-color: black; color: white; font-family: sans-serif; text-align: center; padding-top: 50px;">
+  جاري الاتصال بيوتيوب...
+</body>
+</html>
