@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>٢</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    background: #f9f9f9;
+    margin: 20px;
+    direction: rtl;
+    color: #333;
+  }
+  input[type="text"] {
+    font-size: 8px;
+    padding: 3px 5px;
+    width: 200px;
+  }
+  button {
+    font-size: 8px;
+    padding: 3px 8px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  label {
+    font-size: 6px;
+  }
+</style>
+</head>
+<body>
+  <form id="searchForm" onsubmit="return openYoutubeSearch()">
+    <label for="query">اكتب اسم الأغنية:</label><br />
+    <input type="text" id="query" name="query" autocomplete="off" /><br /><br />
+    <button type="submit">بحث في يوتيوب</button>
+  </form>
+
+  <script>
+    function openYoutubeSearch() {
+      const query = document.getElementById('query').value.trim();
+      if (!query) return false;
+      const url = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(query);
+      window.open(url, '_blank');
+      return false;
+    }
+  </script>
+</body>
+</html>
