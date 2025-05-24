@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>صفحة التحكم</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding: 30px;">
+  <h2>اكتب اسم الأغنية</h2>
+  <form id="songForm">
+    <input type="text" id="songInput" placeholder="اكتب اسم الأغنية هنا" style="width: 80%; padding: 10px;" />
+    <button type="submit" style="padding: 10px 20px; margin-top: 10px;">إرسال</button>
+  </form>
+
+  <script>
+    document.getElementById('songForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const song = document.getElementById('songInput').value.trim();
+      if (song === '') return alert('من فضلك اكتب اسم الأغنية');
+
+      // ارسل الاسم لملف song.txt (محتاج إعداد backend أو GitHub API - معقد شوي)
+      alert('هذه نسخة تجريبية: تحتاج إعدادات خاصة للكتابة على GitHub');
+    });
+  </script>
+</body>
+</html>
